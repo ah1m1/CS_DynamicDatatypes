@@ -1,8 +1,8 @@
-public class Queue<T> {
+public class NonGenericQueue {
     private Box front;
     private Box back;
 
-    public void enqueue(T element) {
+    public void enqueue(Object element) {
         if (element == null)
             return;
 
@@ -31,28 +31,28 @@ public class Queue<T> {
         return front == null;
     }
 
-    public T getFirst() {
+    public Object getFirst() {
         return front.getElement();
     }
 
-    public T getLast() {
+    public Object getLast() {
         return back.getElement();
     }
 
     private class Box {
-        private T element;
+        private Object element;
         private Box next;
 
-        public Box(T element) {
+        public Box(Object element) {
             this.element = element;
             this.next = null;
         }
 
-        public T getElement() {
+        public Object getElement() {
             return element;
         }
 
-        public void setElement(T element) {
+        public void setElement(Object element) {
             this.element = element;
         }
 
